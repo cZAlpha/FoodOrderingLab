@@ -27,6 +27,8 @@ const styles = StyleSheet.create({
       backgroundColor: 'white',
       padding: 10,
       borderRadius: 20,
+      flex: 1,
+      maxWidth: "50%",
     },
     image: {
       width:  '100%',
@@ -36,11 +38,13 @@ const styles = StyleSheet.create({
       fontSize: 20,
       fontWeight: '700',
       marginVertical: 10,
+      textAlign: "center",
     },
     price: {
       color: Colors.light.tint,
       fontSize: 15,
       fontWeight: 'bold',
+      textAlign: "center",
     },
   });
   

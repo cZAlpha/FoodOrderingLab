@@ -1,7 +1,7 @@
 const products = [
   {
     id: 1,
-    name: 'Ultimate Pepperoni',
+    name: 'Pepperoni',
     image:
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/peperoni.png',
     price: 12.99,
@@ -25,7 +25,7 @@ const products = [
     name: 'Margarita',
     image:
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/margarita.png',
-    price: 9.9,
+    price: 9.99,
   },
   {
     id: 5,
