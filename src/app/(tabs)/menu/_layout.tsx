@@ -22,7 +22,12 @@ export default function MenuStack() {
                     </Link>
                 )
             }}>
-            <Stack.Screen name="index" options={{ title: "Menu" }}/>
+            <Stack.Screen name="index" options={{ title: "Menu",
+        headerTitleStyle: {
+            fontSize: 22, // Adjust the font size as desired
+            fontWeight: 'bold', // Adjust the font weight as desired
+          }
+        }}/>
         </Stack>
     );
 }

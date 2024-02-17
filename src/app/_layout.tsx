@@ -56,7 +56,14 @@ function RootLayoutNav() {
       <CartProvider>
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="cart" options={{ presentation: 'modal' }} />
+          <Stack.Screen name="cart" options={{ 
+            presentation: 'modal',
+            title: 'Cart', // Set the title to 'Cart'
+            headerTitleStyle: {
+              fontSize: 20, // Adjust the font size as desired
+              fontWeight: 'bold', // Adjust the font weight as desired
+            }
+          }} />
         </Stack>
       </CartProvider>
     </ThemeProvider>
