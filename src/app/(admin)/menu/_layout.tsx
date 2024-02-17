@@ -5,10 +5,9 @@ import Colors from "@/constants/Colors";
 
 export default function MenuStack() {
     return (
-        <Stack 
-            screenOptions={{}}>
+        <Stack>
             <Stack.Screen name="index" options={{ title: "Menu",  
-                headerLeft: () => (
+                headerLeft: () => ( // CUSTOM (MADE BY NOAH) BUTTON TO GO BACK TO INDEX ROUTE
                     <Link href="/" asChild>
                         <Pressable>
                             {({ pressed }) => (
@@ -22,13 +21,34 @@ export default function MenuStack() {
                         </Pressable>
                     </Link>
                 ), 
-                headerRight: () => (
-                    <Link href="/createItem" asChild>
+                headerRight: () => ( // ADD BUTTON (NOT DONE)
+                    <Link href="/createItem" asChild> 
                         <Pressable>
                             {({ pressed }) => (
                                 <FontAwesome
                                     name="plus"
                                     size={20}
+                                    color={Colors.light.tint}
+                                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                                />
+                            )}
+                        </Pressable>
+                    </Link>
+                ), 
+                headerTitleStyle: {
+                    fontSize: 22, // Adjust the font size as desired
+                    fontWeight: 'bold', // Adjust the font weight as desired
+                }
+                }}/>
+
+        <Stack.Screen name="[id]" options={{ title: "Menu",   // EDIT BUTTON
+                headerRight: () => (
+                    <Link href="/editItem" asChild>
+                        <Pressable>
+                            {({ pressed }) => (
+                                <FontAwesome
+                                    name="pencil"
+                                    size={25}
                                     color={Colors.light.tint}
                                     style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
                                 />
