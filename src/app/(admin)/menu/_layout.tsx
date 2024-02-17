@@ -22,7 +22,7 @@ export default function MenuStack() {
                     </Link>
                 ), 
                 headerRight: () => ( // ADD BUTTON (NOT DONE)
-                    <Link href="/createItem" asChild> 
+                    <Link href="/(admin)/menu/create" asChild> 
                         <Pressable>
                             {({ pressed }) => (
                                 <FontAwesome
@@ -43,7 +43,7 @@ export default function MenuStack() {
 
         <Stack.Screen name="[id]" options={{ title: "Menu",   // EDIT BUTTON
                 headerRight: () => (
-                    <Link href="/editItem" asChild>
+                    <Link href="/(admin)/menu/edit" asChild>
                         <Pressable>
                             {({ pressed }) => (
                                 <FontAwesome
