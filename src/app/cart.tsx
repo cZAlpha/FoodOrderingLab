@@ -1,16 +1,18 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, Platform } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
-import { Platform } from 'react-native'
+import { useCart } from '@/provider/CartProvider'
 
-const cart = () => {
-  return (
+const CartScreen = () => {
+  const { items } = useCart();
+
+  return ( 
     <View>
-      <Text>cart</Text>
+      <Text>Cart Items Length: {items.length} </Text>
+
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </View>
     
-  )
-}
+  );
+};
 
-export default cart
+export default CartScreen 
