@@ -55,14 +55,22 @@ function RootLayoutNav() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <CartProvider>
         <Stack>
+          <Stack.Screen name="index" options={{ 
+            title: 'Food Ordering', 
+            headerTitleStyle: {
+              fontSize: 30, 
+              fontWeight: 'bold', 
+            }
+          }}
+          />
           <Stack.Screen name="(user)" options={{ headerShown: false }} />
           <Stack.Screen name="(admin)" options={{ headerShown: false }} />
           <Stack.Screen name="cart" options={{ 
             presentation: 'modal',
             title: 'Cart', // Set the title to 'Cart'
             headerTitleStyle: {
-              fontSize: 20, // Adjust the font size as desired
-              fontWeight: 'bold', // Adjust the font weight as desired
+              fontSize: 20, 
+              fontWeight: 'bold', 
             }
           }} />
         </Stack>

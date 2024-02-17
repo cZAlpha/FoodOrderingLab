@@ -6,13 +6,14 @@ import Colors from "@/constants/Colors";
 export default function MenuStack() {
     return (
         <Stack 
-            screenOptions={{ 
-                headerRight: () => (
-                    <Link href="/cart" asChild>
+            screenOptions={{}}>
+            <Stack.Screen name="index" options={{ title: "Menu",  
+                headerLeft: () => (
+                    <Link href="/" asChild>
                         <Pressable>
                             {({ pressed }) => (
                                 <FontAwesome
-                                    name="shopping-cart"
+                                    name="backward"
                                     size={20}
                                     color={Colors.light.tint}
                                     style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
@@ -20,14 +21,26 @@ export default function MenuStack() {
                             )}
                         </Pressable>
                     </Link>
-                )
-            }}>
-            <Stack.Screen name="index" options={{ title: "Menu",
-        headerTitleStyle: {
-            fontSize: 22, // Adjust the font size as desired
-            fontWeight: 'bold', // Adjust the font weight as desired
-          }
-        }}/>
+                ), 
+                headerRight: () => (
+                    <Link href="/createItem" asChild>
+                        <Pressable>
+                            {({ pressed }) => (
+                                <FontAwesome
+                                    name="plus"
+                                    size={20}
+                                    color={Colors.light.tint}
+                                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                                />
+                            )}
+                        </Pressable>
+                    </Link>
+                ), 
+                headerTitleStyle: {
+                    fontSize: 22, // Adjust the font size as desired
+                    fontWeight: 'bold', // Adjust the font weight as desired
+                }
+                }}/>
         </Stack>
     );
 }
