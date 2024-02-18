@@ -40,27 +40,6 @@ export default function MenuStack() {
                     fontWeight: 'bold', // Adjust the font weight as desired
                 }
                 }}/>
-
-        <Stack.Screen name="[id]" options={{ title: "Menu",   // EDIT BUTTON
-                headerRight: () => (
-                    <Link href="/(admin)/menu/edit" asChild>
-                        <Pressable>
-                            {({ pressed }) => (
-                                <FontAwesome
-                                    name="pencil"
-                                    size={25}
-                                    color={Colors.light.tint}
-                                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                                />
-                            )}
-                        </Pressable>
-                    </Link>
-                ), 
-                headerTitleStyle: {
-                    fontSize: 22, // Adjust the font size as desired
-                    fontWeight: 'bold', // Adjust the font weight as desired
-                }
-                }}/>
         </Stack>
     );
 }
