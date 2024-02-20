@@ -48,7 +48,7 @@ const SignInScreen = () => {
         style={styles.input}
       />
 
-      <Button
+      <Button style={styles.button}
         disabled={loading}
         text={loading ? 'Signing in...' : 'Sign in'}
       />
@@ -67,6 +67,8 @@ const styles = StyleSheet.create({
   },
   label: {
     color: 'gray',
+    fontSize: 25,
+    fontWeight: 'bold',
   },
   input: {
     borderWidth: 1,
@@ -76,13 +78,19 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     backgroundColor: 'white',
     borderRadius: 5,
+    fontSize: 18,
+    fontWeight: 'bold',
   },
   textButton: {
     alignSelf: 'center',
     fontWeight: 'bold',
     color: Colors.light.tint,
     marginVertical: 10,
+    fontSize: 18,
   },
+  button: {
+    fontSize: 18,
+  }
 });
 
 export default SignInScreen;

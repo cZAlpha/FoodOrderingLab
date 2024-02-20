@@ -6,7 +6,6 @@ import { useState } from 'react';
 import Button from '@/components/Button';
 import { useCart } from '@/provider/CartProvider';
 import { PizzaSize } from '@/types';
-import { useRoute } from '@react-navigation/native';
 
 const sizes: PizzaSize[] = ["S", "M", "L", "XL"];
 
