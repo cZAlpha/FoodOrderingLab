@@ -1,7 +1,7 @@
-import { FontAwesome } from "@expo/vector-icons";
-import { Link, Stack } from "expo-router";
-import { Pressable } from "react-native";
-import Colors from "@/constants/Colors";
+import { FontAwesome } from "@expo/vector-icons"; // Importing fonts to use for UI, (SpaceMono-Regular)
+import { Link, Stack } from "expo-router"; // Link: allows for custom routing, Stack: allows you to 'stack' screens on top of one another for easier access 
+import { Pressable } from "react-native"; // Basically just a React Native library that allows you to use buttons
+import Colors from "@/constants/Colors"; // Refers to Colors that were included within the project from the creator
 
 export default function MenuStack() {
     return (
