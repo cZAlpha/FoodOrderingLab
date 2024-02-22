@@ -1,18 +1,16 @@
-import { Stack, useLocalSearchParams, useRouter, Link } from 'expo-router';
-import { View, Text, Image, StyleSheet, Pressable } from 'react-native'
-import products from '@assets/data/products';
-import { defaultPizzaImage } from '@/components/ProductListItem';
-import { useState } from 'react';
-import Button from '@/components/Button';
-import { useCart } from '@/provider/CartProvider';
-import { PizzaSize } from '@/types';
-import { useRoute } from '@react-navigation/native';
-import { FontAwesome } from '@expo/vector-icons';
-import Colors from '@/constants/Colors';
+import { Stack, useLocalSearchParams, useRouter, Link } from 'expo-router'; // Imports various hooks from expo-router
+import { View, Text, Image, StyleSheet, Pressable } from 'react-native' // Imports various hooks from react native
+import products from '@assets/data/products'; // Imports pre-existing product data from assets
+import { defaultPizzaImage } from '@/components/ProductListItem'; // Imports the default pizza image from ProductListItem in Components
+import { useState } from 'react'; // Imports the useState hook from react to allow the dev to handle the setting of pizza sizes
+import { useCart } from '@/provider/CartProvider'; // Imports the useCart hook that allows us to use the cart, as the name implies
+import { PizzaSize } from '@/types'; // Imports the PizzaSize type 
+import { FontAwesome } from '@expo/vector-icons'; // Importing fonts to use for UI, (SpaceMono-Regular)
+import Colors from '@/constants/Colors'; // Imports color from the constants folder provided by the tutorial guy
 
-const sizes: PizzaSize[] = ["S", "M", "L", "XL"];
+const sizes: PizzaSize[] = ["S", "M", "L", "XL"]; // Sets an array of Pizza sizes to be used later on
 
-const ProductDetailsScreen = () => {
+const ProductDetailsScreen = () => { 
   const { id } = useLocalSearchParams();
   const {addItem} = useCart();
 
