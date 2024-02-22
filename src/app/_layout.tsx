@@ -1,10 +1,10 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import FontAwesome from '@expo/vector-icons/FontAwesome'; // Importing fonts to use for UI, (SpaceMono-Regular)
 import { DarkTheme, 
          DefaultTheme, 
          ThemeProvider 
-} from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
+} from '@react-navigation/native'; // Importing dark theme from react native to make the screen dark when necessary
+import { useFonts } from 'expo-font'; // Another font import
+import { Stack } from 'expo-router'; // 
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import { useColorScheme } from '@components/useColorScheme';
