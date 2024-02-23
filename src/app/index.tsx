@@ -1,9 +1,12 @@
+//Import the react framework and its features as well as button components, the Link feature and an image of a pizza.//
+
 import { View, StyleSheet, Image } from 'react-native';
 import React from 'react';
 import Button from '../components/Button';
 import { Link } from 'expo-router';
 import { defaultPizzaImage } from '@/components/ProductListItem';
 
+//Returns the design of the home menu.//
 const index = () => {
   return (
     <View style={ styles.container }>
@@ -26,6 +29,7 @@ const index = () => {
   );
 };
 
+//Holder for the styling.//
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -39,5 +43,5 @@ const styles = StyleSheet.create({
   },
 });
 
-
+//Exports the index file.//
 export default index;
