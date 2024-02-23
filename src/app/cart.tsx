@@ -1,9 +1,12 @@
+//Import specific react features as well as the button component, status bar component, and specific cart-related functionalities.//
+
 import { View, Text, Platform, FlatList } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import { useCart } from '@/provider/CartProvider'
 import CartListItem from '@/components/CartListItem';
 import Button from '@/components/Button';
 
+//This method sets up the functionality of the cart screen as well as returns the design of it.//
 const CartScreen = () => {
   const { items, total } = useCart();
 
@@ -24,4 +27,5 @@ const CartScreen = () => {
   );
 };
 
+//Exports cart screen.//
 export default CartScreen 
