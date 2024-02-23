@@ -96,5 +96,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
   }
 });
-
+//Exports the sign-in screen.//
 export default SignInScreen;
