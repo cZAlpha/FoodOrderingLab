@@ -1,11 +1,15 @@
+//Import react features as well as colors and the forwardRef functionality.//
+
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import Colors from '../constants/Colors';
 import { forwardRef } from 'react';
- 
+
+//Set up buttons props.//
 type ButtonProps = {
   text: string;
 } & React.ComponentPropsWithoutRef<typeof Pressable>;
 
+//Return the button design.//
 const Button = forwardRef<View | null, ButtonProps>(
   ({ text, ...pressableProps }, ref) => {
     return (
@@ -15,7 +19,7 @@ const Button = forwardRef<View | null, ButtonProps>(
     );
   }
 );
-
+//Holder for the button design.//
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.light.tint,
@@ -30,5 +34,5 @@ const styles = StyleSheet.create({
     color: 'white',
   },
 });
-
+//Export the button.//
 export default Button;
