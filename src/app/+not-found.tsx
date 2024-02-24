@@ -1,9 +1,8 @@
-import { Link, Stack } from 'expo-router';
-import { StyleSheet } from 'react-native';
+import { Link, Stack } from 'expo-router'; // Allows for us to link things (routing) and create a screen through stack elements
+import { StyleSheet } from 'react-native'; // Imports stylesheet from React Native to allow us to define a stylesheet for the page
+import { Text, View } from '@components/Themed'; // Allows us to return a view that also contains text
 
-import { Text, View } from '@components/Themed';
-
-export default function NotFoundScreen() {
+export default function NotFoundScreen() { // If a screen ain't found, route to this screen so that the user knows there was an error or the screen they're accessing doesn't exist
   return (
     <>
       <Stack.Screen options={{ title: 'Oops!' }} />
@@ -18,7 +17,7 @@ export default function NotFoundScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({ // Defines the stylesheet
   container: {
     flex: 1,
     alignItems: 'center',
