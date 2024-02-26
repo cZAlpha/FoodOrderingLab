@@ -1,5 +1,5 @@
 import { FontAwesome } from "@expo/vector-icons";
-import { Link, Stack } from "expo-router";
+import { Link, Stack } from "expo-router"; // Link is a component that allows you to navigate to a different page
 import { Pressable } from "react-native";
 import Colors from "@/constants/Colors";
 
@@ -8,7 +8,7 @@ export default function MenuStack() {
         <Stack 
             screenOptions={{ 
                 headerRight: () => (
-                    <Link href="/cart" asChild>
+                    <Link href="/cart" asChild> // Link to the cart page
                         <Pressable>
                             {({ pressed }) => (
                                 <FontAwesome

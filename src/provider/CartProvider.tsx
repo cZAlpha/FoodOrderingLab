@@ -3,28 +3,28 @@ import { PropsWithChildren, createContext, useContext, useState } from "react";
 import { randomUUID } from 'expo-crypto';
 
 type CartType = {
-    items: CartItem[];
-    addItem: (product: Product, size: CartItem['size']) => void;
-    updateQuantity: (itemId: string, amount: -1 | 1) => void;
+    items: CartItem[]; // Array of cart items
+    addItem: (product: Product, size: CartItem['size']) => void; // Function to add a product to the cart
+    updateQuantity: (itemId: string, amount: -1 | 1) => void; // Function to update the quantity of a cart item
     total: number;
 };
 
 export const CartContext = createContext<CartType>({
     items: [],
-    addItem: () => {},
-    updateQuantity: () => {},
-    total: 0,
+    addItem: () => {}, // Default function to add a product to the cart
+    updateQuantity: () => {}, // Default function to update the quantity of a cart item
+    total: 0, // Default total
 });
 
 const CartProvider = ({ children }: PropsWithChildren) => {
-    const [items, setItems] = useState<CartItem[]>([]);
+    const [items, setItems] = useState<CartItem[]>([]); // Array of cart items
 
     const addItem = (product: Product, size: CartItem['size']) => {
         // If already in cart, increment quantity
         const existingItem = items.find(item => item.product == product && item.size == size);
 
         if (existingItem) {
-            updateQuantity(existingItem.id, 1);
+            updateQuantity(existingItem.id, 1); // Increment the quantity of the existing item
             return; 
         }
 
@@ -40,12 +40,12 @@ const CartProvider = ({ children }: PropsWithChildren) => {
     };
     
     // updateQuantity
-    const updateQuantity = (itemId: string, amount: -1 | 1) => {
-        setItems(items.map((item) =>  
-                item.id != itemId 
-                ? item 
-                : {...item, quantity: item.quantity + amount } 
-            ).filter( (item) => item.quantity > 0)
+    const updateQuantity = (itemId: string, amount: -1 | 1) => { // Update the quantity of a cart item
+        setItems(items.map((item) =>  // Map through the items
+                item.id != itemId // If the item id is not equal to the item id
+                ? item  // Return the item
+                : {...item, quantity: item.quantity + amount }  // Or return the item with the updated quantity
+            ).filter( (item) => item.quantity > 0) // Filter out items with a quantity of 0
         );
     };
 

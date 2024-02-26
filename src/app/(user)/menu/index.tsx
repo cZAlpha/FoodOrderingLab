@@ -18,7 +18,7 @@ export default function MenuScreen() {
                                     name="backward"
                                     size={20}
                                     color={Colors.light.tint}
-                                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }} // If pressed, then the opacity is 0.5, else it is 1
                                 />
                             )}
                         </Pressable>
@@ -32,10 +32,10 @@ export default function MenuScreen() {
       />
 
       <FlatList
-        data = {products}
+        data = {products} // Data is the products array
         renderItem = { ({ item }) => <ProductListItem product={item} /> }
         numColumns={2}
-        contentContainerStyle={{ gap: 10, padding: 10 }}
+        contentContainerStyle={{ gap: 10, padding: 10 }} // Gap between the items
         columnWrapperStyle={{ gap: 10 }}
       />
     

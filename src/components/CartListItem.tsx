@@ -6,29 +6,29 @@ import { defaultPizzaImage } from './ProductListItem';
 import { FontAwesome } from '@expo/vector-icons';
 import { useCart } from '@/provider/CartProvider';
 
-type CartListItemProps = {
-  cartItem: CartItem;
+type CartListItemProps = { // Define the type of the props
+  cartItem: CartItem; // The cart item
 };
 
 const CartListItem = ({ cartItem }: CartListItemProps) => {
-  const { updateQuantity } = useCart();
+  const { updateQuantity } = useCart(); // Get the updateQuantity function from the CartProvider, used to update the quantity of the cart item
   return (
     <View style={styles.container}>
       <Image
-        source={{ uri: cartItem.product.image || defaultPizzaImage }}
+        source={{ uri: cartItem.product.image || defaultPizzaImage }} // Set the image source to the product image or the default pizza image when the product image is not available
         style={styles.image}
         resizeMode="contain"
       />
       <View style={{ flex: 1 }}>
         <Text style={styles.title}>{cartItem.product.name}</Text>
         <View style={styles.subtitleContainer}>
-          <Text style={styles.price}>${cartItem.product.price.toFixed(2)}</Text>
+          <Text style={styles.price}>${cartItem.product.price.toFixed(2)}</Text> // Display the price of the product
           <Text>Size: {cartItem.size}</Text>
         </View>
       </View>
       <View style={styles.quantitySelector}>
         <FontAwesome
-          onPress={() => updateQuantity(cartItem.id, -1)}
+          onPress={() => updateQuantity(cartItem.id, -1)} // When the minus button is pressed, update the quantity of the cart item by -1
           name="minus"
           color="gray"
           style={{ padding: 5 }}
@@ -36,7 +36,7 @@ const CartListItem = ({ cartItem }: CartListItemProps) => {
 
         <Text style={styles.quantity}>{cartItem.quantity}</Text>
         <FontAwesome
-          onPress={() => updateQuantity(cartItem.id, 1)}
+          onPress={() => updateQuantity(cartItem.id, 1)} // When the plus button is pressed, update the quantity of the cart item by 1
           name="plus"
           color="gray"
           style={{ padding: 5 }}
