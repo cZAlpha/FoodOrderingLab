@@ -35,5 +35,6 @@ const styles = StyleSheet.create({
     color: 'white',
   },
 });
+
 //Export the button.//
 export default Button;
