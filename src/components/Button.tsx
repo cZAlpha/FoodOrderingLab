@@ -19,6 +19,7 @@ const Button = forwardRef<View | null, ButtonProps>(
     );
   }
 );
+
 //Holder for the button design.//
 const styles = StyleSheet.create({
   container: {
